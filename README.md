@@ -1,10 +1,14 @@
-# ConCoRD: Enhancing Self-Consistency and Performance of Pre-Trained Language Models through Natural Language Inference
+# ConCoRD: Consistency Correction through Relation Detection
 
-This repository contains a high-level implementation of the system proposed in [our EMNLP 2022 paper](https://ericmitchell.ai/emnlp-2022-concord), as well as steps to reproduce the results presented therein.
+This repository contains a high-level implementation of **ConCoRD**, the system proposed in the EMNLP 2022 paper [Enhancing Self-Consistency and Performance of
+Pretrained Language Models with NLI](https://ericmitchell.ai/concord.pdf), as well as the steps to reproduce the results in the paper. See the [project website](https://ericmitchell.ai/emnlp-2022-concord/) for an overview of what ConCoRD does and how it works.
 
-TODO: explain downloading of Drive files
+## Data
 
-## NLI Models
+ConCoRD doesn't perform training or fine-tuning, so it doesn't use any training data. However, it does have hyperparameters, so we provide the small validation sets used for hyperparameter tuning in addition to the datasets used for evaluation in [this Google Drive folder](https://drive.google.com/drive/folders/13keswJ2Xlde6YsoEPPbQzX1byxJc7MrU?usp=sharing).
+
+### Pre-trained NLI Models
+ConCoRD uses off-the-shelf NLI models to perform relation detection and ultimately enhance model self-consistency & accuracy. We use the following NLI models, all from the wonderful HuggingFace library:
 * [RoBERTa Large ANLI](https://huggingface.co/ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli?text=I+like+you.+I+love+you)
 * [RoBERTa Large MNLI](https://huggingface.co/roberta-large-mnli)
 * [ALBERT xxlarge](https://huggingface.co/ynie/albert-xxlarge-v2-snli_mnli_fever_anli_R1_R2_R3-nli?text=I+like+you.+I+love+you)
@@ -232,3 +236,21 @@ python3 eval_retrieve.py --model={t5-small, t5-large, t5-3b} --cache_dir=$CACHE_
 ```
 The hyperparameter search might take 3 hours or longer depending on the amount of compute available. The results will be printed, or you can find the results stored in the `hyperparam_search` directory.
 
+
+## BibTeX
+If ConCoRD is useful for your own research, you can cite our work with the following BibTeX entry:
+
+    
+
+    @inproceedings{mitchell2022enhancing,
+        title={Enhancing Self-Consistency and Performance of
+            Pretrained Language Models with NLI},
+        author={Mitchell, Eric and Noh, Joseph J. and Li, Siyan and
+                Armstrong, William S. and Agarwal, Ananth and
+                Liu, Patrick and Finn, Chelsea and Manning, Christopher D.},
+        booktitle={Proceedings of the 2022 Conference on Empirical
+                Methods in Natural Language Processing (EMNLP)},
+        url={https://ericmitchell.ai/concord.pdf},
+        year={2022},
+        publisher={Association for Computational Linguistics}
+    }
