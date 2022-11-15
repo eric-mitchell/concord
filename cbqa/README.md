@@ -1,0 +1,2 @@
+# Acknowledgemnts
+`templates.json` and `non_countable.txt` are lightly modified versions of files shared by the authors of [BeliefBank: Adding Memory to a Pre-Trained Language Model for a Systematic Notion of Belief](https://aclanthology.org/2021.emnlp-main.697) (Kassner et al., EMNLP 2021)

@@ -1,0 +1,38 @@
+# create with: 
+# `conda env create -f environment.yml`
+# 
+# changes to this file can be applied to an existing environment with:
+# `conda env update --file environment.yml --prune`
+
+name: concord
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.9
+  - pytorch
+  - transformers
+  - conda-forge::tokenizers=0.12.1
+  - torchvision
+  - torchaudio
+  - nvidia::cudatoolkit=10.2
+  - sentencepiece
+  - protobuf
+  - scikit-learn
+  - inflect
+  - matplotlib
+  - IPython
+  - jupyter
+  - ipykernel
+  - notebook
+  - ipywidgets
+  - pip
+  - pip:
+      - python-sat[pblib,aiger]
+      - hyperopt
+      - func-timeout
+      - opencv-python
+      - wget
+# unset if not on macOS
+# variables:
+#   CC: /usr/bin/clang

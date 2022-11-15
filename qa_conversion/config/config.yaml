@@ -1,0 +1,7 @@
+device: "cuda:0"
+batch_size: 16
+n_steps: 50000
+log_interval: 1000
+val_steps: 200
+model_name: "t5-base"
+patience: 5
